@@ -1,17 +1,17 @@
 #!/usr/bin/dumb-init /bin/bash
 
-echo "[info] Attempting to start microsocks..."
+echo "[info] Attempting to start gost..."
 
-microsocks_cli="nohup /usr/local/bin/microsocks -i "0.0.0.0" -p 9118"
+gost_cli_tcp="nohup /usr/bin/gost"
+gost_cli_udp="nohup /usr/bin/gost"
 
-if [[ -n "${SOCKS_USER}" ]]; then
-	microsocks_cli="${microsocks_cli} -u ${SOCKS_USER} -P ${SOCKS_PASS}"
+
+if [[ -n "${SOCKS_PASS}" ]]; then
+	gost_cli_tcp="${gost_cli_tcp}  -L=ss2://AEAD_CHACHA20_POLY1305:${SOCKS_PASS}@:9119"
+	gost_cli_udp="${gost_cli_tcp}  -L=ssu://AEAD_CHACHA20_POLY1305:${SOCKS_PASS}@:9119"
 fi
 
-if [[ "${VPN_ENABLED}" == "yes" ]]; then
-	microsocks_cli="${microsocks_cli} -b ${vpn_ip}"
-fi
+${gost_cli_tcp} &
+${gost_cli_udp} &
 
-${microsocks_cli} &
-
-echo "[info] microsocks process started"
+echo "[info] gost process started"
