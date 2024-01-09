@@ -26,7 +26,7 @@ fi
 ####
 
 # define pacman packages
-pacman_packages="base-devel privoxy"
+pacman_packages="base-devel privoxy wget"
 
 # install compiled packages using pacman
 if [[ ! -z "${pacman_packages}" ]]; then
@@ -47,6 +47,12 @@ source aur.sh
 
 # download and compile microsocks
 github.sh --install-path "/tmp/compile" --github-owner "rofl0r" --github-repo "microsocks" --compile-src 'make install'
+
+# download and install gost
+wget https://github.com/ginuerzh/gost/releases/download/v2.11.5/gost-linux-amd64-2.11.5.gz
+gzip -d gost-linux-amd64-2.11.5.gz
+mv gost-linux-amd64-2.11.5 /usr/bin/gost
+chmod +x /usr/bin/gost
 
 # container perms
 ####
