@@ -51,8 +51,8 @@ while true; do
 
 					# run script to start microsocks
 					source /home/nobody/microsocks.sh
-					# run script to start gost
-				    source /home/nobody/gost.sh
+					# run script to start singbox
+				    source /home/nobody/sb.sh
 
 				else
 
@@ -72,8 +72,8 @@ while true; do
 
 						# run script to start microsocks
 						source /home/nobody/microsocks.sh
-						# run script to start gost
-						source /home/nobody/gost.sh
+						# run script to start singbox
+						source /home/nobody/sb.sh
 
 					fi
 
@@ -112,8 +112,8 @@ while true; do
 
 				# run script to start microsocks
 				source /home/nobody/microsocks.sh
-				# run script to start gost
-				source /home/nobody/gost.sh
+				# run script to start sb
+				source /home/nobody/sb.sh
 
 			fi
 

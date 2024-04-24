@@ -20,6 +20,7 @@ ADD build/root/*.sh /root/
 # add run bash scripts
 ADD run/nobody/*.sh /home/nobody/
 
+ADD sing-box-template.json /etc/
 # install app
 #############
 
@@ -32,7 +33,7 @@ RUN chmod +x /root/*.sh /home/nobody/*.sh && \
 
 # expose port for privoxy
 EXPOSE 8118
-
+EXPOSE 9119
 # set permissions
 #################
 

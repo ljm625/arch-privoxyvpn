@@ -48,11 +48,11 @@ source aur.sh
 # download and compile microsocks
 github.sh --install-path "/tmp/compile" --github-owner "rofl0r" --github-repo "microsocks" --compile-src 'make install'
 
-# download and install gost
-wget https://github.com/ginuerzh/gost/releases/download/v2.11.5/gost-linux-amd64-2.11.5.gz
-gzip -d gost-linux-amd64-2.11.5.gz
-mv gost-linux-amd64-2.11.5 /usr/bin/gost
-chmod +x /usr/bin/gost
+# download and install sing-box
+wget https://github.com/SagerNet/sing-box/releases/download/v1.8.11/sing-box-1.8.11-linux-amd64.tar.gz
+tar xzvf sing-box-1.8.11-linux-amd64.tar.gz
+mv sing-box-1.8.11-linux-amd64/sing-box /usr/bin/
+chmod +x /usr/bin/sing-box
 
 # container perms
 ####

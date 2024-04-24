@@ -1,0 +1,18 @@
+{
+    "inbounds": [
+      {
+        "type": "shadowsocks",
+        "tag": "ss-in",
+        "password": "REPLACE_WITH_ACTUAL_PASS",
+        "listen": "::",
+        "listen_port": 9119,
+        "method": "aes-256-gcm"
+      }
+    ],
+    "outbounds": [
+      {
+        "type": "direct",
+        "tag": "direct-out"
+    }
+    ]
+  }
