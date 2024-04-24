@@ -20,7 +20,7 @@ ADD build/root/*.sh /root/
 # add run bash scripts
 ADD run/nobody/*.sh /home/nobody/
 
-ADD sing-box-template.json /etc/
+ADD build/sing-box-template.json /etc/
 # install app
 #############
 
