@@ -2,7 +2,7 @@
 
 echo "[info] Attempting to start singbox..."
 
-sb_cli="nohup /usr/bin/sing-box -c /etc/sing-box.json"
+sb_cli="nohup /usr/bin/sing-box run -c /etc/sing-box.json"
 
 
 if [[ -n "${SOCKS_PASS}" ]]; then
